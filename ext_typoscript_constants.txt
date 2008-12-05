@@ -1,0 +1,4 @@
+plugin.tx_ajaxsearch {
+	# cat= //10; type= text; label= Template path: Path to the template file.
+	template = EXT:ajaxsearch/res/tmpl.ajaxsearch.html
+}

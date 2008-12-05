@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<title>Ajax Search Template</title>
+</head>
+<body>
+
+<h1>Ajax IndexedSearch Template</h1>
+<h2>Avaible Marker</h2>
+
+###FORM_COUNTER###
+###FORM_LEGEND###
+###AJAX_CONFIGURATION###
+###LABEL_SWORD###
+###LABEL_SPINNER###
+###FORM_ACTION###
+
+<!-- ###VIEW_SEARCHFORM### begin -->
+<form id="searchform" name="searchform" method="post" action="###ACTION###">
+	<fieldset>
+		<legend>###LEGEND###</legend>
+		<div class="div1st"><label for="suchwort" class="hidden">Suchwort:</label><input type="text" name="tx_indexedsearch[sword]" id="suchwort" title="Bitte geben Sie ein Suchwort ein." autocomplete="off" /><span class="spinner_wrapper"><img id="tx_indexedsearch_spinner" style="display: none" src="/typo3conf/ext/ajaxsearch/res/spinner.gif" alt="" /></span></div>
+		<div class="div2nd"><label for="suchen" class="hidden">Suchen:</label><input type="image" name="tx_indexedsearch[submit_button]" id="suchen" src="fileadmin/template/img/m_search.gif" title="Suchen!" /></div>
+	</fieldset>
+	<div id="tx_indexedsearch_choices" style="display:none;"></div>
+</form>
+###UID###
+###CONFIGURATION###
+<!-- ###VIEW_SEARCHFORM### end -->
+
+</body>
+</html>

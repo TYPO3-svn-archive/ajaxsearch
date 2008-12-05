@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<ROOT>
+		<el>
+			<ajaxsearch_legend>
+				<TCEforms>
+					<label>LLL:EXT:ajaxsearch/locallang_db.xml:tt_content.list_type_pi1.ajaxsearch_legend</label>
+					<config>
+						<type>input</type>
+					</config>
+				</TCEforms>
+			</ajaxsearch_legend>
+			<ajaxsearch_config>
+				<TCEforms>
+					<label>LLL:EXT:ajaxsearch/locallang_db.xml:tt_content.list_type_pi1.ajaxsearch_config</label>
+					<config>
+						<type>select</type>
+						<items>
+							<numIndex index="0">
+								<numIndex index="0">LLL:EXT:ajaxsearch/locallang_db.xml:tt_content.list_type_pi1.ajaxsearch_config.select</numIndex>
+								<numIndex index="1">---div---</numIndex>
+							</numIndex>
+						</items>
+						<foreign_table>tx_ajaxsearch_config</foreign_table>
+						<foreign_table_where></foreign_table_where>
+						<size>1</size>
+						<minitems>1</minitems>
+						<maxitems>1</maxitems>
+					</config>
+				</TCEforms>
+			</ajaxsearch_config>
+			<ajaxsearch_resultpage>
+				<TCEforms>
+					<label>LLL:EXT:ajaxsearch/locallang_db.xml:tt_content.list_type_pi1.ajaxsearch_resultpage</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>pages</allowed>
+						<size>1</size>
+						<minitems>1</minitems>
+						<maxitems>1</maxitems>
+					</config>
+				</TCEforms>
+			</ajaxsearch_resultpage>
+			<indexedsearch_resultpage>
+				<TCEforms>
+					<label>LLL:EXT:ajaxsearch/locallang_db.xml:tt_content.list_type_pi1.indexedsearch_resultpage</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>pages</allowed>
+						<size>1</size>
+						<minitems>1</minitems>
+						<maxitems>1</maxitems>
+					</config>
+				</TCEforms>
+			</indexedsearch_resultpage>
+		</el>
+	</ROOT>
+</T3DataStructure>
