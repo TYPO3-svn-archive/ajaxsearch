@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'ajaxsearch'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_ajaxsearch_config">AJAX search configuration</label>
+			<label index="tx_ajaxsearch_config.title">Title of configuration</label>
+			<label index="tx_ajaxsearch_config.charset">TYPO3 Charset</label>
+			<label index="tx_ajaxsearch_config.language">Frontend language</label>
+			<label index="tx_ajaxsearch_config.dbquery">mySQL database query</label>
+			<label index="tx_ajaxsearch_config.dblimit">Max results</label>
+			<label index="tx_ajaxsearch_config.showall">"Show all results" link</label>
+			<label index="tx_ajaxsearch_config.showdesc">Show short description</label>
+			<label index="tx_ajaxsearch_config.highlight">Keyword Highlighting (Ext. psm_highlight)</label>
+			<label index="tx_ajaxsearch_config.mode">Search mode</label>
+			<label index="tx_ajaxsearch_config.mode.I.0">Suggestion</label>
+			<label index="tx_ajaxsearch_config.mode.I.1">Good Luck</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_ajaxsearch_config">AJAX-Suche Konfiguration</label>
+			<label index="tx_ajaxsearch_config.title">Titel</label>
+			<label index="tx_ajaxsearch_config.charset">TYPO3 Zeichensatz</label>
+			<label index="tx_ajaxsearch_config.language">Frontend Sprache</label>
+			<label index="tx_ajaxsearch_config.dbquery">mySQL Datenbankabfrage</label>
+			<label index="tx_ajaxsearch_config.dblimit">Maximale Anzahl von Suchbegriffen</label>
+			<label index="tx_ajaxsearch_config.showall">"Zeige alle Suchergebnisse" Link</label>
+			<label index="tx_ajaxsearch_config.showdesc">Zeige kurze Beschreibung</label>
+			<label index="tx_ajaxsearch_config.highlight">Suchworthervorhebung (Ext. psm_highlight)</label>
+			<label index="tx_ajaxsearch_config.mode">Suchmodus</label>
+			<label index="tx_ajaxsearch_config.mode.I.0">Vorschlagfunktion</label>
+			<label index="tx_ajaxsearch_config.mode.I.1">"Auf gut Glück"</label>
+		</languageKey>
+	</data>
+</T3locallang>

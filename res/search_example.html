@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<script src="prototype.js" type="text/javascript"></script>
+<script src="scriptaculous.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/powermail/js/mandatoryjs/lib/prototype.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/powermail/js/mandatoryjs/src/scriptaculous.js" type="text/javascript"></script>
+<script type="text/javascript">
+	/*<![CDATA[*/
+<!--
+	/*
+		"updateElement" hook for a custom function (see Autocompleter documentation for details):
+		When you want to show the "Show all hits" link as first list item, you have to include this
+		function: "updateElement" replaces the built-in Autocompleter function, so this function
+		adds the logic for the special link and brings back the original functionallity to Autocompleter!
+	*/
+	function completeSearch(sel) {
+		if (sel.id == 'tx-ajaxsearch-showall') {
+			var form = $(sel.id).up('form').name;
+			document.forms[form].submit();
+		} else {
+			var input		= $(sel.id).up('form').down('input').id;
+			var text		= $(sel.id).innerHTML.stripScripts().unescapeHTML().replace(/[\n\r\s]+/g, ' ');
+			$(input).value	= text;
+		}
+	}
+//-->
+	/*]]>*/
+</script>
+<style type="text/css">
+<!--
+	#tx-ajaxsearch-choices {
+		position: absolute;
+		width: 15em;
+		background-color: #FFF;
+		border: 1px solid #888;
+	}
+	
+	#tx-ajaxsearch-choices ul {
+		margin: 0;
+		padding: 0;
+	}
+	
+	#tx-ajaxsearch-choices li {
+	  list-style: none;
+	  display: block;
+	  margin: 0;
+	  padding: 0.25em;
+	  cursor: pointer;
+	}
+	
+	#tx-ajaxsearch-choices li.selected {
+		background-color: #ffb;
+	}
+	
+	#tx-ajaxsearch-choices li.noresult {
+		background-color: red;
+	}
+-->
+</style>
+<head>
+<title>Example how to include the AJAX search into your target search</title>
+</head>
+<body>
+	<!-- example begin -->
+	<form method="post">
+		<fieldset>
+			<legend>Your search form</legend>
+			<dl>
+				<dt><label for="sword">Search</label></dt>
+				<dd><input type="text" name="sword" id="tx-ajaxsearch-input" autocomplete="off" /><span id="tx-ajaxsearch-spinner" style="display: none"><img src="spinner.gif" alt="Working..." /></span></dd>
+	   		</dl>
+	 	</fieldset>
+		<div id="tx-ajaxsearch-choices" style="display:none;"></div>
+		<script type="text/javascript">
+			/*<![CDATA[*/
+		<!--
+			// "Normal" Autocompleter by Script.aculo.us:
+			// http://github.com/madrobby/scriptaculous/wikis/ajax-autocompleter 
+			new Ajax.Autocompleter('tx-ajaxsearch-input', 'tx-ajaxsearch-choices', '/index.php', {
+				paramName:	'value', 
+				minChars:	3,
+				frequency:	0.5,
+				indicator:	'tx-ajaxsearch-spinner',
+				parameters:	'eID=ajaxsearch&ajaxsearch_uid=###YOUR_CONFIG_UID###'
+			});
+			
+			// "Special" Autocompleter for "Show all hits" link:
+			new Ajax.Autocompleter('tx-ajaxsearch-input', 'tx-ajaxsearch-choices', '/index.php', {
+				paramName:	'value', 
+				minChars:	3,
+				frequency:	0.5,
+				updateElement: completeSearch,
+				indicator:	'tx-ajaxsearch-spinner',
+				parameters:	'eID=ajaxsearch&ajaxsearch_uid=###YOUR_CONFIG_UID###'
+			});
+		//-->
+			/*]]>*/
+		</script>
+	</form>
+	<!-- example end -->
+</body>
+</html>
