@@ -16,6 +16,8 @@ CREATE TABLE tx_ajaxsearch_config (
 	showall tinyint(4) DEFAULT '0' NOT NULL,
 	showdesc tinyint(4) DEFAULT '0' NOT NULL,
 	highlight tinyint(4) DEFAULT '0' NOT NULL,
+	resultpage blob NOT NULL,
+	parameters varchar(255) DEFAULT '' NOT NULL,
 	dbquery text NOT NULL,
 	dblimit tinyint(4) DEFAULT '20' NOT NULL,
 

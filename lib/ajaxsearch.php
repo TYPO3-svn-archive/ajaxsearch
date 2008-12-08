@@ -38,6 +38,8 @@
 	
 	class tx_ajaxsearch extends tslib_pibase {
 	
+		var $cacheArrResult = array(); // required for fill parameter markers, it's needed that the result is cached
+		
 		function main() {
 			// DB connect
 			tslib_eidtools::connectDB();
@@ -71,7 +73,7 @@
 			$choices	= '';
 			if (sizeof($arrResult)>0) {
 				// Show all hits
-				$choices	.= $arrConf['showall']!=0?'<li id="tx-ajaxsearch-showall">'.$LL[$arrConf['language']]['showAll'].'</li>':'';
+				$choices	.= $arrConf['showall']!=0?'<li id="tx-ajaxsearch-showall-'.time().'">'.$LL[$arrConf['language']]['showAll'].'</li>':'';
 				
 				// Limit choises
 				$end = sizeof($arrResult)>$arrConf['dblimit']?$arrConf['dblimit']:sizeof($arrResult)-1;
@@ -86,8 +88,10 @@
 					}
 					// Link "good luck" choise & Highlighting
 					if ($arrConf['mode'] == 2) {
-						$highlight = $arrConf['highlight']!=0?'&no_cache=1&sword_list[0]='.$input:false; 
-						$choise  = '<a href="index.php?id='.$arrResult[$x]['uid'].$highlight.'">'.$choise.'</a>';
+						$highlight	= $arrConf['highlight']!=0?'&no_cache=1&sword_list[0]='.$input:false;
+						$this->cacheArrResult = $arrResult[$x];
+						$parameters	= $arrConf['parameters']?'&'.preg_replace_callback("/###([a-zA-Z_0-9]+)###/i", array($this,'setParameterMarkers'),$arrConf['parameters']):'';
+						$choise		= '<a href="index.php?id='.($arrConf['resultpage']?$arrConf['resultpage']:$arrResult[$x]['uid']).$highlight.$parameters.'">'.$choise.'</a>';
 					}
 					
 					$choices	.= '<li id="c'.($x+1).'">'.$choise.'</li>';
@@ -114,6 +118,18 @@
 			echo $content;
 			exit;
 		}
+		
+		/**
+		 * Methode to fill the parameter markers
+		 *
+		 * @param array $parameter
+		 * @param unknown_type $test
+		 * @return unknown
+		 */
+		function setParameterMarkers($parameter) {
+			return $this->cacheArrResult[strtolower($parameter[1])];
+		}
+		
 	}
 	
 	$output = t3lib_div::makeInstance('tx_ajaxsearch');

@@ -7,9 +7,17 @@
 	<data type="array">
 		<languageKey index="en" type="array">
 			<label index="showAll">Show all hits</label>
+			<label index="labelSearchWord">Searchword:</label>
+			<label index="labelSearchWordTitle">Please, type in a searchword.</label>
+			<label index="labelSearch">Search:</label>
+			<label index="labelSearchTitle">Search!</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="showAll">Alle Treffer einblenden</label>
+			<label index="labelSearchWord">Suchwort:</label>
+			<label index="labelSearchWordTitle">Bitte geben Sie ein Suchwort ein.</label>
+			<label index="labelSearch">Suche:</label>
+			<label index="labelSearchTitle">Suche!</label>
 		</languageKey>
 	</data>
 </T3locallang>

@@ -15,6 +15,8 @@
 			<label index="tx_ajaxsearch_config.showall">"Show all results" link</label>
 			<label index="tx_ajaxsearch_config.showdesc">Show short description</label>
 			<label index="tx_ajaxsearch_config.highlight">Keyword Highlighting (Ext. psm_highlight)</label>
+			<label index="tx_ajaxsearch_config.resultpage">Resultpage (If empty the UID of the result will be used for resultpage)</label>
+			<label index="tx_ajaxsearch_config.parameters">Link-Parameters (The Parameters must declared in the db SELECT query)</label>
 			<label index="tx_ajaxsearch_config.mode">Search mode</label>
 			<label index="tx_ajaxsearch_config.mode.I.0">Suggestion</label>
 			<label index="tx_ajaxsearch_config.mode.I.1">Good Luck</label>
@@ -22,7 +24,6 @@
 			<label index="tt_content.list_type_pi1.ajaxsearch_legend">Searchform legend label</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_config">AjaxSearch configuration</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_config.select">__Please choose__:</label>
-			<label index="tt_content.list_type_pi1.ajaxsearch_resultpage">AjaxSearch resultpage</label>
 			<label index="tt_content.list_type_pi1.indexedsearch_resultpage">IndexedSearch resultpage</label>
 		</languageKey>
 		<languageKey index="de" type="array">
@@ -35,6 +36,8 @@
 			<label index="tx_ajaxsearch_config.showall">"Zeige alle Suchergebnisse" Link</label>
 			<label index="tx_ajaxsearch_config.showdesc">Zeige kurze Beschreibung</label>
 			<label index="tx_ajaxsearch_config.highlight">Suchworthervorhebung (Ext. psm_highlight)</label>
+			<label index="tx_ajaxsearch_config.resultpage">Ergebnisseite (Wenn leer wir die UID des ergebnisses genutzt)</label>
+			<label index="tx_ajaxsearch_config.parameters">Link-Parameter (Die Parameter müssen in der DB SELECT Abfrage deklariert werden)</label>
 			<label index="tx_ajaxsearch_config.mode">Suchmodus</label>
 			<label index="tx_ajaxsearch_config.mode.I.0">Vorschlagfunktion</label>
 			<label index="tx_ajaxsearch_config.mode.I.1">"Auf gut Glück"</label>
@@ -42,7 +45,6 @@
 			<label index="tt_content.list_type_pi1.ajaxsearch_legend">Suchformular Name</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_config">AjaxSearch Konfiguration</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_config.select">__Bitte auswählen__:</label>
-			<label index="tt_content.list_type_pi1.ajaxsearch_resultpage">AjaxSearch Ergebnisseite</label>
 			<label index="tt_content.list_type_pi1.indexedsearch_resultpage">IndexedSearch Ergebnisseite</label>
 		</languageKey>
 	</data>

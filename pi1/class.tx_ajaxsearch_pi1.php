@@ -44,9 +44,11 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 	var $ajaxSearchResultPageUid	= 0;
 	var $ajaxSearchConfigurationUid	= 0;
 	var $ajaxSearchLegendLabel		= '';
+	var $indexedSearchResultPageUid = 0;
 	
 	// ajaxsearch configuration values
 	var $ajaxSearchConfigurationTable = 'tx_ajaxsearch_config';
+	
 	
 	/**
 	 * The main method of the PlugIn
@@ -67,6 +69,7 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 		$this->ajaxSearchConfigurationUid	= (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_config');
  		$this->ajaxSearchResultPageUid		= (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_resultpage');
  		$this->ajaxSearchLegendLabel		= (string) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_legend');
+ 		$this->indexedSearchResultPageUid	= (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'indexedsearch_resultpage');
 		
  		// set template
  		$this->templateCode = $this->cObj->fileResource($this->conf['template']);
@@ -78,6 +81,7 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 		return $this->pi_wrapInBaseClass($content);
 	}
 	
+	
 	/**
 	 * Enter description here...
 	 *
@@ -87,9 +91,14 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 		if(!$this->templateCode || !$this->ajaxSearchConfigurationUid || !$this->templateMarker || !$this->ajaxSearchResultPageUid) { return ''; }
 
 		$markerArray = array(
-			'###UID###'				=> $this->ajaxSearchConfigurationUid, // must be unique! 
-			'###CONFIGURATION###'	=> $this->ajaxSearchConfigurationUid,
-			'###LEGEND###'			=> $this->ajaxSearchLegendLabel,
+			'###ACTION###'					=> $this->pi_getPageLink($this->indexedSearchResultPageUid, '', array()),
+			'###UID###'						=> time(),
+			'###CONFIGURATION###'			=> $this->ajaxSearchConfigurationUid,
+			'###LEGEND###'					=> $this->ajaxSearchLegendLabel,
+			'###LABEL_SEARCHWORD###'		=> $this->pi_getLL('labelSearchWord'),
+			'###LABEL_SEARCHWORDTITLE###'	=> $this->pi_getLL('labelSearchWordTitle'),
+			'###LABEL_SEARCH###'			=> $this->pi_getLL('labelSearch'),
+			'###LABEL_SEARCHTITLE###'		=> $this->pi_getLL('labelSearchTitle'),
 		);
 		$content = $this->cObj->getSubpart($this->templateCode, $this->templateMarker);
 		$content = $this->cObj->substituteMarkerArray($content, $markerArray);

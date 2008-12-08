@@ -32,19 +32,6 @@
 					</config>
 				</TCEforms>
 			</ajaxsearch_config>
-			<ajaxsearch_resultpage>
-				<TCEforms>
-					<label>LLL:EXT:ajaxsearch/locallang_db.xml:tt_content.list_type_pi1.ajaxsearch_resultpage</label>
-					<config>
-						<type>group</type>
-						<internal_type>db</internal_type>
-						<allowed>pages</allowed>
-						<size>1</size>
-						<minitems>1</minitems>
-						<maxitems>1</maxitems>
-					</config>
-				</TCEforms>
-			</ajaxsearch_resultpage>
 			<indexedsearch_resultpage>
 				<TCEforms>
 					<label>LLL:EXT:ajaxsearch/locallang_db.xml:tt_content.list_type_pi1.indexedsearch_resultpage</label>

@@ -4,7 +4,7 @@
 	$TCA['tx_ajaxsearch_config'] = array (
 		'ctrl' => $TCA['tx_ajaxsearch_config']['ctrl'],
 		'interface' => array (
-			'showRecordFieldList' => 'hidden,title,charset,language,mode,showall,showdesc,highlight,dbquery,dblimit'
+			'showRecordFieldList' => 'hidden,title,charset,language,mode,showall,showdesc,highlight,resultpage,parameters,dbquery,dblimit'
 		),
 		'feInterface' => $TCA['tx_ajaxsearch_config']['feInterface'],
 		'columns' => array (
@@ -79,6 +79,28 @@
 					'type' => 'check',
 				)
 			),
+			'resultpage' => Array(
+				'exclude' => 0,
+				'label' => 'LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.resultpage',
+				'config' => Array(
+					'type' => 'group',
+					'internal_type' => 'db',
+					'allowed' => 'pages',
+					'size' => 1,
+					'minitems' => 0,
+					'maxitems' => 1,
+				)
+			),
+			'parameters' => Array (		
+				'exclude' => 0,		
+				'label' => 'LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.parameters',		
+				'config' => Array (
+					'type' => 'input',	
+					'size' => '30',	
+					'max' => '255',	
+					'eval' => 'trim,nospace',
+				)
+			),
 			'dbquery' => Array (		
 				'exclude' => 0,		
 				'label' => 'LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.dbquery',		
@@ -101,7 +123,7 @@
 			),
 		),
 		'types' => array (
-			'0' => array('showitem' => 'hidden;;1;;1-1-1, title;;;;4-4-4, charset;;;;1-1-1, language, mode;;;;4-4-4, showall, showdesc, highlight, dbquery;;;;1-1-1, dblimit')
+			'0' => array('showitem' => 'hidden;;1;;1-1-1, title;;;;4-4-4, charset;;;;1-1-1, language, mode;;;;4-4-4, showall, showdesc, highlight, resultpage, parameters, dbquery;;;;1-1-1, dblimit')
 		),
 		'palettes' => array (
 			'1' => array('showitem' => '')
