@@ -83,7 +83,7 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 	
 	
 	/**
-	 * Enter description here...
+	 * Render the search form
 	 *
 	 * @return unknown
 	 */
@@ -92,7 +92,7 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 
 		$markerArray = array(
 			'###ACTION###'					=> $this->pi_getPageLink($this->indexedSearchResultPageUid, '', array()),
-			'###UID###'						=> time(),
+			'###UID###'						=> $this->cObj->data['uid'],
 			'###CONFIGURATION###'			=> $this->ajaxSearchConfigurationUid,
 			'###LEGEND###'					=> $this->ajaxSearchLegendLabel,
 			'###LABEL_SEARCHWORD###'		=> $this->pi_getLL('labelSearchWord'),

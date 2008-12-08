@@ -16,12 +16,12 @@
 		<div class="div1st"><label for="suchwort_###UID###" class="hidden">###LABEL_SEARCHWORD###</label><input type="text" name="tx_indexedsearch[sword]" id="suchwort_###UID###" title="###LABEL_SEARCHWORDTITLE###" autocomplete="off" /><span class="spinner_wrapper"><img id="tx_ajaxsearch_spinner_###UID###" style="display: none" src="/typo3conf/ext/ajaxsearch/res/spinner.gif" alt="" /></span></div>
 		<div class="div2nd"><label for="suchen_###UID###" class="hidden">###LABEL_SEARCH###</label><input type="image" name="tx_indexedsearch[submit_button]" id="suchen_###UID###" src="fileadmin/template/img/m_search.gif" title="###LABEL_SEARCHTITLE###" /></div>
 	</fieldset>
-	<div id="tx_ajaxsearch_choices_###UID###" style="display:none;"></div>
+	<div id="tx_ajaxsearch_choices_###UID###" class="tx_ajaxsearch_choices" style="display:none;"></div>
 </form>
 <script type="text/javascript">
         /*<![CDATA[*/
    <!--
-        new Ajax.Autocompleter('suchwort_###UID###', 'tx_ajaxsearch_choices_###UID###', 'index.php', {paramName:'value', minChars:3, frequency:0.5, updateElement: completeSearch, indicator:'tx_ajaxsearch_spinner_###UID###', parameters:'eID=ajaxsearch&ajaxsearch_uid=###CONFIGURATION###'});
+   	var searchform_###UID### = new Ajax.Autocompleter('suchwort_###UID###', 'tx_ajaxsearch_choices_###UID###', 'index.php', {paramName:'value', minChars:3, frequency:0.5, updateElement: completeSearch, indicator:'tx_ajaxsearch_spinner_###UID###', parameters:'eID=ajaxsearch&ajaxsearch_uid=###CONFIGURATION###'});
    //-->
         /*]]>*/
 </script>

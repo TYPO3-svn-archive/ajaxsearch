@@ -56,7 +56,7 @@
 			
 			// Prepare input
 			$input		= $arrPost['value'];
-			$input		= strtolower($arrConf['charset'])!='utf8'?utf8_decode($input):$input;
+			$input		= strtolower($arrConf['charset'])!='utf-8'?utf8_decode($input):$input;
 			$input		= $GLOBALS['TYPO3_DB']->quoteStr($input, $arrConf['dbtable']);
 		
 			// Prepare query
@@ -101,15 +101,15 @@
 			}
 		
 			// Setup doctype - especially for MSIE
-			$content = '<?xml version="1.0" encoding="ISO-8859-1"?>';
-			$content = '<ul>'.$choices.'</ul>';
+			$content = '<?xml version="1.0" encoding="'.$arrConf['charset'].'" ?>';
+			$content.= '<ul>'.$choices.'</ul>';
 		
 			// Header
 			header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 			header('Last-Modified: '.gmdate( "D, d M Y H:i:s" ).'GMT');
 			header('Cache-Control: no-cache, must-revalidate');
 			header('Pragma: no-cache');
-			header('Content-Type: text/xml; charset='.$charset);
+			header('Content-Type: text/xml; charset='.$arrConf['charset']);
 			header('Content-Length: '.strlen($content));
 			// Setup xml file IE - especially for MSIE
 			header('Content-Disposition: inline; filename=ajaxsearch.xml');
