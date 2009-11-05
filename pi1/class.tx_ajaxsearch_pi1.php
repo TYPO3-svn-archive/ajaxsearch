@@ -26,7 +26,7 @@ require_once(PATH_tslib.'class.tslib_pibase.php');
 
 
 /**
- * Plugin 'Ajax IndexedSearch' for the 'ajaxsearch' extension.
+ * Plugin 'AjaxSearch' for the 'ajaxsearch' extension.
  *
  * @author Pascal Hinz <hinz@elemente.ms>
  * @package TYPO3
@@ -41,10 +41,9 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 	var $templateMarker = '###VIEW_SEARCHFORM###';
 
 	// flexform values
-	var $ajaxSearchResultPageUid	= 0;
 	var $ajaxSearchConfigurationUid	= 0;
+	var $ajaxSearchResultPageUid	= 0;
 	var $ajaxSearchLegendLabel		= '';
-	var $indexedSearchResultPageUid = 0;
 	
 	// ajaxsearch configuration values
 	var $ajaxSearchConfigurationTable = 'tx_ajaxsearch_config';
@@ -69,7 +68,6 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 		$this->ajaxSearchConfigurationUid	= (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_config');
  		$this->ajaxSearchResultPageUid		= (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_resultpage');
  		$this->ajaxSearchLegendLabel		= (string) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_legend');
- 		$this->indexedSearchResultPageUid	= (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'indexedsearch_resultpage');
 		
  		// set template
  		$this->templateCode = $this->cObj->fileResource($this->conf['template']);
@@ -91,7 +89,7 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 		if(!$this->templateCode || !$this->ajaxSearchConfigurationUid || !$this->templateMarker || !$this->ajaxSearchResultPageUid) { return ''; }
 
 		$markerArray = array(
-			'###ACTION###'					=> $this->pi_getPageLink($this->indexedSearchResultPageUid, '', array()),
+			'###ACTION###'					=> $this->pi_getPageLink($this->ajaxSearchResultPageUid, '', array()),
 			'###UID###'						=> $this->cObj->data['uid'],
 			'###CONFIGURATION###'			=> $this->ajaxSearchConfigurationUid,
 			'###LEGEND###'					=> $this->ajaxSearchLegendLabel,
