@@ -20,11 +20,11 @@
 			<label index="tx_ajaxsearch_config.mode">Search mode</label>
 			<label index="tx_ajaxsearch_config.mode.I.0">Suggestion</label>
 			<label index="tx_ajaxsearch_config.mode.I.1">Good Luck</label>
-			<label index="tt_content.list_type_pi1">Ajax IndexedSearch</label>
+			<label index="tt_content.list_type_pi1">AjaxSearch</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_legend">Searchform legend label</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_config">AjaxSearch configuration</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_config.select">__Please choose__:</label>
-			<label index="tt_content.list_type_pi1.indexedsearch_resultpage">IndexedSearch resultpage</label>
+			<label index="tt_content.list_type_pi1.ajaxsearch_resultpage">AjaxSearch resultpage</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tx_ajaxsearch_config">AJAX-Suche Konfiguration</label>
@@ -41,11 +41,11 @@
 			<label index="tx_ajaxsearch_config.mode">Suchmodus</label>
 			<label index="tx_ajaxsearch_config.mode.I.0">Vorschlagfunktion</label>
 			<label index="tx_ajaxsearch_config.mode.I.1">"Auf gut Glück"</label>
-			<label index="tt_content.list_type_pi1">Ajax IndexedSearch</label>
+			<label index="tt_content.list_type_pi1">AjaxSearch</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_legend">Suchformular Name</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_config">AjaxSearch Konfiguration</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_config.select">__Bitte auswählen__:</label>
-			<label index="tt_content.list_type_pi1.indexedsearch_resultpage">IndexedSearch Ergebnisseite</label>
+			<label index="tt_content.list_type_pi1.ajaxsearch_resultpage">AjaxSearch Ergebnisseite</label>
 		</languageKey>
 	</data>
 </T3locallang>
