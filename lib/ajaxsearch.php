@@ -52,7 +52,7 @@
 			$arrConf	= $GLOBALS['TYPO3_DB']->sql_fetch_assoc($resConf);
 			
 			// Local locallang
-			$LL			= t3lib_div::readLLfile(t3lib_extMgm::extPath('ajaxsearch').'lib/locallang.xml', $arrConf['language']);
+			$LL			= t3lib_div::readLLfile(t3lib_extMgm::extPath('ajaxsearch').'lib/locallang.xml', strtolower($arrConf['language']));
 			
 			// Prepare input
 			$input		= $arrPost['value'];

@@ -5,7 +5,7 @@
         <description>Language labels for plugin &quot;tx_ajaxsearch_pi1&quot;</description>
     </meta>
 	<data type="array">
-		<languageKey index="en" type="array">
+		<languageKey index="default" type="array">
 			<label index="showAll">Show all hits</label>
 			<label index="labelSearchWord">Searchword:</label>
 			<label index="labelSearchWordTitle">Please, type in a searchword.</label>
