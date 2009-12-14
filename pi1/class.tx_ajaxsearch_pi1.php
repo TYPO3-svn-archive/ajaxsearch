@@ -65,9 +65,9 @@ class tx_ajaxsearch_pi1 extends tslib_pibase {
 		$this->pi_initPIflexForm();
 		
 		// get values
-		$this->ajaxSearchConfigurationUid	= (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_config');
- 		$this->ajaxSearchResultPageUid		= (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_resultpage');
- 		$this->ajaxSearchLegendLabel		= (string) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_legend');
+		$this->ajaxSearchConfigurationUid	= $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_config') != '' ? (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_config') : $this->conf['ajaxsearch_config'];
+ 		$this->ajaxSearchResultPageUid		= $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_resultpage') != '' ? (int) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_resultpage') : $this->conf['ajaxsearch_resultpage'];
+ 		$this->ajaxSearchLegendLabel		= $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_legend') != '' ? (string) $this->pi_getFFvalue($this->cObj->data['pi_flexform'],'ajaxsearch_legend') : $this->conf['ajaxsearch_legend'];
 		
  		// set template
  		$this->templateCode = $this->cObj->fileResource($this->conf['template']);

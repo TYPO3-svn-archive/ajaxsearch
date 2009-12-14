@@ -29,19 +29,19 @@
 </script>
 <style type="text/css">
 <!--
-	#tx-ajaxsearch-choices {
+	.tx-ajaxsearch-choices {
 		position: absolute;
 		width: 15em;
 		background-color: #FFF;
 		border: 1px solid #888;
 	}
 	
-	#tx-ajaxsearch-choices ul {
+	.tx-ajaxsearch-choices ul {
 		margin: 0;
 		padding: 0;
 	}
 	
-	#tx-ajaxsearch-choices li {
+	.tx-ajaxsearch-choices li {
 	  list-style: none;
 	  display: block;
 	  margin: 0;
@@ -49,11 +49,11 @@
 	  cursor: pointer;
 	}
 	
-	#tx-ajaxsearch-choices li.selected {
+	.tx-ajaxsearch-choices li.selected {
 		background-color: #ffb;
 	}
 	
-	#tx-ajaxsearch-choices li.noresult {
+	.tx-ajaxsearch-choices li.noresult {
 		background-color: red;
 	}
 -->
@@ -71,7 +71,7 @@
 				<dd><input type="text" name="sword" id="tx-ajaxsearch-input" autocomplete="off" /><span id="tx-ajaxsearch-spinner" style="display: none"><img src="spinner.gif" alt="Working..." /></span></dd>
 	   		</dl>
 	 	</fieldset>
-		<div id="tx-ajaxsearch-choices" style="display:none;"></div>
+		<div id="tx-ajaxsearch-choices" class="tx-ajaxsearch-choices" style="display:none;"></div>
 		<script type="text/javascript">
 			/*<![CDATA[*/
 		<!--
