@@ -33,7 +33,8 @@
 	if (!defined ('PATH_typo3conf')) die ('Could not access this script directly!');
 
 	
-    require_once(PATH_tslib.'class.tslib_pibase.php'); 
+    require_once(PATH_tslib.'class.tslib_pibase.php');
+	require_once(PATH_t3lib.'class.t3lib_befunc.php');
 	
 	
 	class tx_ajaxsearch extends tslib_pibase {
@@ -45,23 +46,40 @@
 			tslib_eidtools::connectDB();
 
 			// Post data
-			$arrPost	= t3lib_div::_POST();
+			$arrPost		= t3lib_div::_POST();
 			
 			// Config array
-			$resConf	= $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'tx_ajaxsearch_config', 'uid='.intval($arrPost['ajaxsearch_uid']).' AND hidden=0 AND deleted=0');
-			$arrConf	= $GLOBALS['TYPO3_DB']->sql_fetch_assoc($resConf);
+			$resConf		= $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'tx_ajaxsearch_config', 'uid='.intval($arrPost['ajaxsearch_uid']).' AND hidden=0 AND deleted=0');
+			$arrConf		= $GLOBALS['TYPO3_DB']->sql_fetch_assoc($resConf);
 			
-			// Local locallang
-			$LL			= t3lib_div::readLLfile(t3lib_extMgm::extPath('ajaxsearch').'lib/locallang.xml', strtolower($arrConf['language']));
+			// Search/Replace values
+			$arrSearch		= array();
+			$arrReplace		= array();
 			
-			// Prepare input
-			$input		= $arrPost['value'];
-			$input		= strtolower($arrConf['charset'])!='utf-8'?utf8_decode($input):$input;
-			$input		= $GLOBALS['TYPO3_DB']->quoteStr($input, $arrConf['dbtable']);
+			// Locallang
+			$LL				= t3lib_div::readLLfile(t3lib_extMgm::extPath('ajaxsearch').'lib/locallang.xml', strtolower($arrConf['language']));
+			
+			// 
+			
+			// Limit search to pagetree, siehe http://typo3blogger.de/kommaseparierte-liste-von-seiten-in-typo3/
+			// Only marker ###PAGES### is replaced, WHERE clause has to be completed in record "AJAX configuration".
+			if ($arrConf['pages']) {
+				$treeLib		= t3lib_div::makeInstance('t3lib_queryGenerator');
+				$pages			= $treeLib->getTreeList($arrConf['pages'], $arrConf['recursive'], 0, 1);
+				$arrSearch[]	= '###PAGES###';
+				$arrReplace[]	= $pages;	
+			}
+
+			// Search word
+			$input			= $arrPost['value'];
+			$input			= strtolower($arrConf['charset'])!='utf-8'?utf8_decode($input):$input;
+			$input			= $GLOBALS['TYPO3_DB']->quoteStr($input, $arrConf['dbtable']);
+			$arrSearch[]	= '###SWORD###';
+			$arrReplace[]	= $input;
 		
-			// Prepare query
-			$dbQuery	= str_replace('###SWORD###', $input, $arrConf['dbquery']);
-			$res		= $GLOBALS['TYPO3_DB']->sql_query($dbQuery);
+			// Database query
+			$dbQuery		= str_replace($arrSearch, $arrReplace, $arrConf['dbquery']);
+			$res			= $GLOBALS['TYPO3_DB']->sql_query($dbQuery);
 			
 			// Raw result
 			$arrResult	= array();

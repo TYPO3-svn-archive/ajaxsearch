@@ -3,8 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
 <script src="prototype.js" type="text/javascript"></script>
 <script src="scriptaculous.js" type="text/javascript"></script>
-<script src="/typo3conf/ext/powermail/js/mandatoryjs/lib/prototype.js" type="text/javascript"></script>
-<script src="/typo3conf/ext/powermail/js/mandatoryjs/src/scriptaculous.js" type="text/javascript"></script>
 <script type="text/javascript">
 	/*<![CDATA[*/
 <!--
@@ -15,7 +13,7 @@
 		adds the logic for the special link and brings back the original functionallity to Autocompleter!
 	*/
 	function completeSearch(sel) {
-		if (sel.id == 'tx-ajaxsearch-showall') {
+		if (sel.id.match(/^tx-ajaxsearch-showall/)) {
 			var form = $(sel.id).up('form').name;
 			document.forms[form].submit();
 		} else {

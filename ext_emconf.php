@@ -30,7 +30,7 @@
 		'clearCacheOnLoad' => 1,
 		'lockType' => '',
 		'author_company' => 'elemente websolutions',
-		'version' => '0.9.0',
+		'version' => '0.9.9',
 		'constraints' => array(
 			'depends' => array(
 			),

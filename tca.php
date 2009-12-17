@@ -4,7 +4,7 @@
 	$TCA['tx_ajaxsearch_config'] = array (
 		'ctrl' => $TCA['tx_ajaxsearch_config']['ctrl'],
 		'interface' => array (
-			'showRecordFieldList' => 'hidden,title,charset,language,mode,showall,showdesc,highlight,resultpage,parameters,dbquery,dblimit'
+			'showRecordFieldList' => 'hidden,title,charset,language,mode,showall,showdesc,highlight,pages,recursive,resultpage,dbquery,dblimit,parameters'
 		),
 		'feInterface' => $TCA['tx_ajaxsearch_config']['feInterface'],
 		'columns' => array (
@@ -79,6 +79,32 @@
 					'type' => 'check',
 				)
 			),
+			'pages' => Array(
+				'exclude' => 0,
+				'label' => 'LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.pages',
+				'config' => Array(
+					'type' => 'group',
+					'internal_type' => 'db',
+					'allowed' => 'pages',
+					'size' => 1,
+					'minitems' => 0,
+					'maxitems' => 1,
+				)
+			),
+			'recursive' => Array (
+				'exclude' => 1,
+				'label' => 'LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.recursive',
+				'config' => Array (
+					'type' => 'select',
+					'items' => Array (
+						Array('LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.recursive.I.0', '0'),
+						Array('LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.recursive.I.1', '1'),
+						Array('LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.recursive.I.2', '2'),
+						Array('LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.recursive.I.3', '3'),
+						Array('LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.recursive.I.99', '99'),
+					),
+				)
+			),
 			'resultpage' => Array(
 				'exclude' => 0,
 				'label' => 'LLL:EXT:ajaxsearch/locallang_db.xml:tx_ajaxsearch_config.resultpage',
@@ -123,7 +149,7 @@
 			),
 		),
 		'types' => array (
-			'0' => array('showitem' => 'hidden;;1;;1-1-1, title;;;;4-4-4, charset;;;;1-1-1, language, mode;;;;4-4-4, showall, showdesc, highlight, resultpage, parameters, dbquery;;;;1-1-1, dblimit')
+			'0' => array('showitem' => 'hidden;;1;;1-1-1, title;;;;4-4-4, charset;;;;1-1-1, language, mode;;;;4-4-4, showall, showdesc, highlight, pages;;;;1-1-1, recursive, resultpage, dbquery;;;;4-4-4, dblimit, parameters')
 		),
 		'palettes' => array (
 			'1' => array('showitem' => '')

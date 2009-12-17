@@ -6,18 +6,44 @@
     </meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="showAll">Show all hits</label>
-			<label index="labelSearchWord">Searchword:</label>
-			<label index="labelSearchWordTitle">Please, type in a searchword.</label>
-			<label index="labelSearch">Search:</label>
-			<label index="labelSearchTitle">Search!</label>
+			<label index="labelSword">Search word</label>
+			<label index="valueSword">Search word</label>
+			<label index="titleSword">Type in a search word.</label>
+			<label index="labelSubmit">Submit</label>
+			<label index="valueSubmit">Submit</label>
+			<label index="titleSubmit">Press button to submit.</label>
 		</languageKey>
 		<languageKey index="de" type="array">
-			<label index="showAll">Alle Treffer einblenden</label>
-			<label index="labelSearchWord">Suchwort:</label>
-			<label index="labelSearchWordTitle">Bitte geben Sie ein Suchwort ein.</label>
-			<label index="labelSearch">Suche:</label>
-			<label index="labelSearchTitle">Suche!</label>
+			<label index="labelSword">Suchwort</label>
+			<label index="valueSword">Suchwort</label>
+			<label index="titleSword">Geben Sie ein Suchwort ein.</label>
+			<label index="labelSubmit">Suche</label>
+			<label index="valueSubmit">Suche</label>
+			<label index="titleSubmit">Suche durch Klicken starten.</label>
 		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="labelSword">Terme recherché</label>
+			<label index="valueSword">Terme recherché</label>
+			<label index="titleSword">Entrer le mot recherché.</label>
+			<label index="labelSubmit">Rechercher</label>
+			<label index="valueSubmit">Rechercher</label>
+			<label index="titleSubmit">Press button to submit.</label>
+		</languageKey>
+		<languageKey index="ru" type="array">
+			<label index="labelSword">Поисковое слово</label>
+			<label index="valueSword">Поисковое слово</label>
+			<label index="titleSword">Пожалуйста, задайте поисковое слово.</label>
+			<label index="labelSubmit">Поиск</label>
+			<label index="valueSubmit">Поиск</label>
+			<label index="titleSubmit">Press button to submit.</label>
+		</languageKey>
+		<languageKey index="cn" type="array">
+			<label index="labelSword">Search word</label>
+			<label index="valueSword">Search word</label>
+			<label index="titleSword">Please, type in a search word.</label>
+			<label index="labelSubmit">研究</label>
+			<label index="valueSubmit">研究</label>
+			<label index="titleSubmit">Press button to submit.</label>
+		</languageKey>	
 	</data>
 </T3locallang>

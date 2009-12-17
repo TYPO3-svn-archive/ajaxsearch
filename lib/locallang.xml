@@ -7,11 +7,19 @@
 	<data type="array">
 		<languageKey index="en" type="array">
 			<label index="showAll">Show all hits</label>
-			<label index="noResult">NO results.</label>
+			<label index="noResult">No suggestions ...</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="showAll">Alle Treffer einblenden</label>
-			<label index="noResult">KEINE Ergebnisse gefunden.</label>
+			<label index="noResult">Keine Vorschläge ...</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="showAll">Afficher tous les résultats</label>
+			<label index="noResult">No suggestions ...</label>
+		</languageKey>
+		<languageKey index="ru" type="array">
+			<label index="showAll">Все результаты показывать</label>
+			<label index="noResult">No suggestions ...</label>
 		</languageKey>
 	</data>
 </T3locallang>

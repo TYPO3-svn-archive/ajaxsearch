@@ -27,7 +27,7 @@
 			'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_ajaxsearch_config.png',
 		),
 		'feInterface' => array (
-			'fe_admin_fieldList' => 'hidden, title, charset, language, mode, showall, showdesc, highlight, resultpage, dbquery, dbfield, dblimit',
+			'fe_admin_fieldList' => 'hidden, title, charset, language, mode, showall, showdesc, highlight, pages, recursive, resultpage, dbquery, dbfield, dblimit, parameters',
 		)
 	);
 ?>
