@@ -26,7 +26,7 @@
 			<label index="valueSword">Terme recherché</label>
 			<label index="titleSword">Entrer le mot recherché.</label>
 			<label index="labelSubmit">Rechercher</label>
-			<label index="valueSubmit">Rechercher</label>
+			<label index="valueSubmit">Chercher</label>
 			<label index="titleSubmit">Press button to submit.</label>
 		</languageKey>
 		<languageKey index="ru" type="array">
@@ -38,11 +38,11 @@
 			<label index="titleSubmit">Press button to submit.</label>
 		</languageKey>
 		<languageKey index="cn" type="array">
-			<label index="labelSword">Search word</label>
-			<label index="valueSword">Search word</label>
-			<label index="titleSword">Please, type in a search word.</label>
-			<label index="labelSubmit">研究</label>
-			<label index="valueSubmit">研究</label>
+			<label index="labelSword">寻找词组/单词</label>
+			<label index="valueSword">寻找词组/单词</label>
+			<label index="titleSword">请输入寻找的词组单词</label>
+			<label index="labelSubmit">寻找</label>
+			<label index="valueSubmit">寻找</label>
 			<label index="titleSubmit">Press button to submit.</label>
 		</languageKey>	
 	</data>

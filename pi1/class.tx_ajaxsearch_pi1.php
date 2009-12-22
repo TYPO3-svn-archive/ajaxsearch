@@ -89,17 +89,18 @@
 			if(!$this->templateCode || !$this->ajaxSearchConfigurationUid || !$this->templateMarker || !$this->ajaxSearchResultPageUid) { return ''; }
 	
 			$markerArray = array(
-				'###ACTION###'			=> $this->pi_getPageLink($this->ajaxSearchResultPageUid, '', array()),
-				'###PREFIX_ID###'		=> $this->prefixId,
-				'###UID###'				=> $this->cObj->data['uid'],
-				'###CONFIGURATION###'	=> $this->ajaxSearchConfigurationUid,
-				'###LEGEND###'			=> $this->ajaxSearchLegendLabel,
-				'###LABEL_SWORD###'		=> $this->pi_getLL('labelSword'),
-				'###VALUE_SWORD###'		=> $this->pi_getLL('valueSword'),
-				'###TITLE_SWORD###'		=> $this->pi_getLL('titleSword'),
-				'###LABEL_SUBMIT###'	=> $this->pi_getLL('labelSubmit'),
-				'###VALUE_SUBMIT###'	=> $this->pi_getLL('valueSubmit'),
-				'###TITLE_SUBMIT###'	=> $this->pi_getLL('titleSubmit'),
+				'###ACTION###'				=> $this->pi_getPageLink($this->ajaxSearchResultPageUid, '', array()),
+				'###PREFIX_ID###'			=> $this->prefixId,
+				'###SYS_LANGUAGE_UID###'	=> $GLOBALS['TSFE']->sys_page->sys_language_uid,
+				'###UID###'					=> $this->cObj->data['uid'],
+				'###CONFIGURATION###'		=> $this->ajaxSearchConfigurationUid,
+				'###LEGEND###'				=> $this->ajaxSearchLegendLabel,
+				'###LABEL_SWORD###'			=> $this->pi_getLL('labelSword'),
+				'###VALUE_SWORD###'			=> $this->pi_getLL('valueSword'),
+				'###TITLE_SWORD###'			=> $this->pi_getLL('titleSword'),
+				'###LABEL_SUBMIT###'		=> $this->pi_getLL('labelSubmit'),
+				'###VALUE_SUBMIT###'		=> $this->pi_getLL('valueSubmit'),
+				'###TITLE_SUBMIT###'		=> $this->pi_getLL('titleSubmit'),
 			);
 			$content = $this->cObj->getSubpart($this->templateCode, $this->templateMarker);
 			$content = $this->cObj->substituteMarkerArray($content, $markerArray);

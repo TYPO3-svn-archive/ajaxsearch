@@ -11,6 +11,7 @@
 
 <!-- ###VIEW_SEARCHFORM### begin -->
 <form id="###PREFIX_ID###_form_###UID###" name="###PREFIX_ID###_form" method="post" action="###ACTION###">
+	<input type="hidden" name="###PREFIX_ID###[lang]" value="###SYS_LANGUAGE_UID###" />
 	<fieldset>
 		<legend>###LEGEND###</legend>
 		<div class="div1st"><label for="###PREFIX_ID###_sword_###UID###" class="hidden">###LABEL_SWORD###:</label><input type="text" name="###PREFIX_ID###[sword]" id="###PREFIX_ID###_sword_###UID###" value="###VALUE_SWORD###" title="###TITLE_SWORD###" onfocus="if(this.value=='###VALUE_SWORD###')this.value='';" onblur="if(this.value=='')this.value='###VALUE_SWORD###';" autocomplete="off" /><span class="spinner_wrapper"><img id="###PREFIX_ID###_spinner_###UID###" style="display: none" src="/typo3conf/ext/ajaxsearch/res/spinner.gif" width="16" height="16" alt="" /></span></div>

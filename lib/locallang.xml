@@ -21,5 +21,9 @@
 			<label index="showAll">Все результаты показывать</label>
 			<label index="noResult">No suggestions ...</label>
 		</languageKey>
+		<languageKey index="cn" type="array">
+			<label index="showAll">显示所有结果</label>
+			<label index="noResult">No suggestions ...</label>
+		</languageKey>
 	</data>
 </T3locallang>
