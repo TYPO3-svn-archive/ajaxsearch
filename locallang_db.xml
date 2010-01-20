@@ -35,31 +35,31 @@
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tx_ajaxsearch_config">AJAX-Suche Konfiguration</label>
-			<label index="tx_ajaxsearch_config.title">Titel</label>
 			<label index="tx_ajaxsearch_config.charset">TYPO3 Zeichensatz</label>
 			<label index="tx_ajaxsearch_config.language">Frontend Sprache</label>
-			<label index="tx_ajaxsearch_config.dbquery">Datenbankabfrage</label>
-			<label index="tx_ajaxsearch_config.dblimit">Maximale Anzahl von Suchbegriffen</label>
-			<label index="tx_ajaxsearch_config.showall">"Zeige alle Suchergebnisse" Link</label>
-			<label index="tx_ajaxsearch_config.showdesc">Zeige kurze Beschreibung</label>
+			<label index="tx_ajaxsearch_config.title">Bezeichnung</label>
+			<label index="tx_ajaxsearch_config.showdesc">Zeige kurze Beschreibung (Feld descprition muss in der SQL-Abfrage vorhanden sein)</label>
 			<label index="tx_ajaxsearch_config.highlight">Suchworthervorhebung (EXT psm_highlight)</label>
-			<label index="tx_ajaxsearch_config.pages">Einstiegspunkt</label>
+			<label index="tx_ajaxsearch_config.showall">"Zeige alle Suchergebnisse" Option</label>
+			<label index="tx_ajaxsearch_config.resultpage">Zielseite der Suche (Wenn leer wir die UID der SQL-Abfrage genutzt)</label>
+			<label index="tx_ajaxsearch_config.pages">Einstiegspunkt (Suche beschränken)</label>
 			<label index="tx_ajaxsearch_config.recursive">Ebenen</label>
 			<label index="tx_ajaxsearch_config.recursive.I.0">Bitte wählen</label>
 			<label index="tx_ajaxsearch_config.recursive.I.1">1 Ebene</label>
 			<label index="tx_ajaxsearch_config.recursive.I.2">2 Ebenen</label>
 			<label index="tx_ajaxsearch_config.recursive.I.3">3 Ebenen</label>
 			<label index="tx_ajaxsearch_config.recursive.I.99">Unendlich</label>
-			<label index="tx_ajaxsearch_config.resultpage">Ergebnisseite (Wenn leer wir die UID des Ergebnisses genutzt)</label>
-			<label index="tx_ajaxsearch_config.parameters">Link-Parameter (Die Parameter müssen in der DB SELECT Abfrage deklariert werden)</label>
+			<label index="tx_ajaxsearch_config.dbquery">Datenbankabfrage</label>
+			<label index="tx_ajaxsearch_config.dblimit">Maximale Anzahl von Suchbegriffen</label>
+			<label index="tx_ajaxsearch_config.parameters">Link-Parameter (Parameter müssen in der SQL-Abfrage deklariert werden)</label>
 			<label index="tx_ajaxsearch_config.mode">Suchmodus</label>
-			<label index="tx_ajaxsearch_config.mode.I.0">Vorschlag</label>
+			<label index="tx_ajaxsearch_config.mode.I.0">Suchvorschlag</label>
 			<label index="tx_ajaxsearch_config.mode.I.1">Google (Weiterleitung)</label>
-			<label index="tt_content.list_type_pi1">AjaxSearch</label>
-			<label index="tt_content.list_type_pi1.ajaxsearch_legend">Suchformular Name</label>
-			<label index="tt_content.list_type_pi1.ajaxsearch_config">AjaxSearch Konfiguration</label>
+			<label index="tt_content.list_type_pi1">Generische AJAX-Suche</label>
+			<label index="tt_content.list_type_pi1.ajaxsearch_legend">Formularname</label>
+			<label index="tt_content.list_type_pi1.ajaxsearch_config">AJAX-Suche Konfiguration</label>
 			<label index="tt_content.list_type_pi1.ajaxsearch_config.select">Bitte wählen</label>
-			<label index="tt_content.list_type_pi1.ajaxsearch_resultpage">AjaxSearch Ergebnisseite</label>
+			<label index="tt_content.list_type_pi1.ajaxsearch_resultpage">Zielseite der Suche</label>
 		</languageKey>
 	</data>
 </T3locallang>
