@@ -13,13 +13,14 @@
 		adds the logic for the special link and brings back the original functionallity to Autocompleter!
 	*/
 	function completeSearch(sel) {
-		if (sel.id.match(/^tx-ajaxsearch-showall/)) {
-			var form = $(sel.id).up('form').name;
+		var form = $(sel.id).up('form').name;
+		if (sel.id.match(/^tx-ajaxsearch-showall/)) {	
 			document.forms[form].submit();
 		} else {
 			var input		= $(sel.id).up('form').down('input').id;
 			var text		= $(sel.id).innerHTML.stripScripts().unescapeHTML().replace(/[\n\r\s]+/g, ' ');
 			$(input).value	= text;
+			document.forms[form].submit();
 		}
 	}
 //-->

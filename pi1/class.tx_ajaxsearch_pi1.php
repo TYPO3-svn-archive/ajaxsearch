@@ -74,7 +74,7 @@
 	 		
 	 		// render template
 	 		$content = $this->renderSearchForm();
-	 		
+
 			// return
 			return $this->pi_wrapInBaseClass($content);
 		}
