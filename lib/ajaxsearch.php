@@ -59,8 +59,6 @@
 			// Locallang
 			$LL				= t3lib_div::readLLfile(t3lib_extMgm::extPath('ajaxsearch').'lib/locallang.xml', strtolower($arrConf['language']));
 			
-			// 
-			
 			// Limit search to pagetree, siehe http://typo3blogger.de/kommaseparierte-liste-von-seiten-in-typo3/
 			// Only marker ###PAGES### is replaced, WHERE clause has to be completed in record "AJAX configuration".
 			if ($arrConf['pages']) {
@@ -119,7 +117,9 @@
 			}
 		
 			// Setup doctype - especially for MSIE
-			$content = '<?xml version="1.0" encoding="'.$arrConf['charset'].'" ?>';
+			// AST, 04.04.11: Warum eigentlich? Der Autocompleter erwarte eine unsortierte Liste, irgendwie ist das XML-Präfix hier hinein gerutscht ...
+			// Funzt jedenfalls in allen IEs auch ohne und DANN auch wieder im FF 4!
+//			$content = '<?xml version="1.0" encoding="'.$arrConf['charset'].'" '?'>';
 			$content.= '<ul>'.$choices.'</ul>';
 		
 			// Header
