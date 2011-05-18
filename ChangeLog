@@ -1,5 +1,11 @@
 (add new changes on top of this file)
 
+11-05-18 Pascal Hinz <Hinz@elemente.ms>
+
+	* Add the missing button.gif
+	* Fixed the missing /(input)/ in the preg_replace RegExp
+	* Fixed CSS class naming 
+
 08-11-21 Andre Steiling  <steiling@elemente.ms>
 
 	* Initial release

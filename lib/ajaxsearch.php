@@ -96,7 +96,7 @@
 				
 				// Highlight input string
 				for ($x=0; $x<=$end; $x++) {
-					$choise		 = preg_replace('('.$input.')', '<strong>\\1</strong>', $arrResult[$x]['title']);
+					$choise		 = preg_replace('/('.$input.')/', '<strong>\\1</strong>', $arrResult[$x]['title']);
 					
 					// Show description
 					if ($arrConf['showdesc'] != 0) {
