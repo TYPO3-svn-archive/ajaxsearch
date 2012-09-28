@@ -93,6 +93,7 @@
 				'###PREFIX_ID###'			=> $this->prefixId,
 				'###SYS_LANGUAGE_UID###'	=> $GLOBALS['TSFE']->sys_page->sys_language_uid,
 				'###UID###'					=> $this->cObj->data['uid'],
+				'###PID###'					=> $this->cObj->data['pid'],
 				'###CONFIGURATION###'		=> $this->ajaxSearchConfigurationUid,
 				'###LEGEND###'				=> $this->ajaxSearchLegendLabel,
 				'###LABEL_SWORD###'			=> $this->pi_getLL('labelSword'),

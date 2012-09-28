@@ -107,7 +107,9 @@
 						$highlight	= $arrConf['highlight']!=0?'&no_cache=1&sword_list[0]='.$input:false;
 						$this->cacheArrResult = $arrResult[$x];
 						$parameters	= $arrConf['parameters']?'&'.preg_replace_callback("/###([a-zA-Z_0-9]+)###/i", array($this,'setParameterMarkers'),$arrConf['parameters']):'';
-						$choise		= '<a href="index.php?id='.($arrConf['resultpage']?$arrConf['resultpage']:$arrResult[$x]['uid']).$highlight.$parameters.'">'.$choise.'</a>';
+						$resultpage = ($arrConf['resultpage']?$arrConf['resultpage']:$arrResult[$x]['uid']);
+						$fallbackResultpage = intval($arrPost['ajaxsearch_fallbackResultpage']);
+						$choise		= '<a href="index.php?id='.($resultpage?$resultpage:$fallbackResultpage).$highlight.$parameters.'">'.$choise.'</a>';
 					}
 					
 					$choices	.= '<li id="c'.($x+1).'">'.$choise.'</li>';
