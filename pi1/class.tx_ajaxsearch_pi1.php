@@ -103,6 +103,11 @@
 				'###VALUE_SUBMIT###'		=> $this->pi_getLL('valueSubmit'),
 				'###TITLE_SUBMIT###'		=> $this->pi_getLL('titleSubmit'),
 			);
+			foreach ($this->conf['marker.'] as $key => $value) {
+				if(stripos($key,'.') === false) {
+					$markerArray['###MARKER_'.strtoupper($key).'###'] = $this->cObj->cObjGetSingle($value, $this->conf['marker.'][$key.'.']);
+				}
+			}
 			$content = $this->cObj->getSubpart($this->templateCode, $this->templateMarker);
 			$content = $this->cObj->substituteMarkerArray($content, $markerArray);
 			return $content;
